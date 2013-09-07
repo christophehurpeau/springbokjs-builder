@@ -1,4 +1,4 @@
-var callbackError=function(type,strOrErr){
+var callbackError=function(type,strOrErr,callback){
 	/*if(strOrErr instanceof Array){
 		var i,finalStr='Errors :';
 		for(i in strOrErr){
@@ -10,11 +10,12 @@ var callbackError=function(type,strOrErr){
 	//var error=new Error(strOrErr instanceof Error ? strOrErr.toString().slice(7) : strOrErr);
 	var error=strOrErr instanceof Error ? strOrErr : new Error(strOrErr);
 	error._Type=type;
-	t.cache.error=error;
 	callback(error);
 };
 
-module.exports = S.extClass(EventEmitter,function($super){
+
+
+module.exports = S.extClass(EventEmitter,function(_super_){
 	this.ctor = function(file){
 		S.defineProperty(this,'file',file);
 		this.isCanceled = false;
