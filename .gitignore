@@ -76,3 +76,6 @@ SCCS
 _$*
 _svn
 svn-commit*.tmp
+
+
+/traceur-compiler
